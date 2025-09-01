@@ -7,27 +7,29 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #f5f5f5;
+    font-family: monospace;
+    font-size: 12px;
+    font-size-adjust: none;
 }
 
 #container {
-    display: flex;
-    flex-flow: column nowrap; 
     height: 100vh;
     width: 100vw;
+
+    display: flex;
+    flex-flow: column nowrap; 
 }
 
 #header {
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 10px;
+
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-
-    width: 100%;
-    padding: 7px;
-    background-color: white;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 #opc {
@@ -38,26 +40,27 @@ body {
 }
 
 #box-res {
+    background-color: rgb(30, 30, 30);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    color: white;
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+    
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-
-    background-color: rgb(30, 30, 30);
-    color: white;
-    margin: auto;
-    border-radius: 5px;
-    width: 98%;
-    max-width: 450px;
 }
 
 #texto {
+    padding: 7px;
+
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-
-    padding: 15px;
 }
 
 #res {
@@ -66,11 +69,12 @@ body {
 }
 
 #btn {
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    color: white;
     padding: 5px 15px;
     margin-bottom: 15px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-radius: 3px;
     cursor: pointer;
     transition: all .5s linear;
 }
@@ -81,21 +85,20 @@ body {
 }
 
 h1 {
-    color: #009dff;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 a {
-    text-decoration: none;
-    color: black;
-    padding: 0px 10px;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: bold;
+    color: black;
+    text-decoration: none;
+    padding: 0px 10px;
     transition: all .3s linear;
 }
 
@@ -105,13 +108,18 @@ a:hover {
 
 @media screen and (min-width: 768px) {
     #header {
+        height: 10%;
         flex-flow: row nowrap;
-        justify-content: space-around;
-        padding: 15px;
+        justify-content: space-evenly;
+    }
+
+    #box-res {
+        padding: 10px;
+        justify-content: space-between;
     }
 
     #btn {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     h1 {
@@ -124,11 +132,5 @@ a:hover {
 
     a {
         font-size: 1.5rem;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    #header {
-        justify-content: space-evenly;
     }
 }
