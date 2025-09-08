@@ -14,3 +14,7 @@ Projeto simples e interativo que gera cores aleatórias ao clicar em um botão. 
 - HTML5 &rarr; Estrutura do projeto
 - CSS3 &rarr; Estilização da interface
 - JavaScript &rarr; Lógica para gerar cores aleatórias
+
+---
+
+#### Entre no site [Gerador de Cores](https://bruno-has.github.io/gerador-de-cores/)
