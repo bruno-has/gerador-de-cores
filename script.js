@@ -1,5 +1,6 @@
 const botao = document.querySelector("#btn");
 const resposta = document.querySelector("#res");
+const msgCopiar = document.querySelector(".msg-copiar");
 
 botao.addEventListener("click", () => {
   const tipoCor = document.body.dataset.attribute;
@@ -8,6 +9,33 @@ botao.addEventListener("click", () => {
 
   document.body.style.backgroundColor = corEscolhida;
   resposta.textContent = corEscolhida;
+});
+
+resposta.addEventListener("mouseenter", () => {
+  msgCopiar.textContent = "Copiar";
+  msgCopiar.style.opacity = 1;
+});
+
+resposta.addEventListener("mouseleave", () => {
+  msgCopiar.style.opacity = 0;
+});
+
+resposta.addEventListener("click", async () => {
+  try {
+    const cor = resposta.textContent.trim();
+
+    await navigator.clipboard.writeText(cor);
+
+    msgCopiar.textContent = "Copiado!";
+    msgCopiar.style.opacity = 1;
+
+    setTimeout(() => {
+      msgCopiar.style.opacity = 0;
+    }, 2000);
+
+  } catch (erro) {
+    console.error("Erro ao copiar.", erro);
+  }
 });
 
 const nomeCor = [
@@ -155,7 +183,7 @@ const nomeCor = [
 ];
 
 function sorteioNominal() {
-  return nomeCor[Math.floor(Math.random() * nomeCor.length)]
+  return nomeCor[Math.floor(Math.random() * nomeCor.length)];
 }
 
 const hexadecimais = [
